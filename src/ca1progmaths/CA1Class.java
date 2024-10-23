@@ -11,10 +11,69 @@ package ca1progmaths;
 public class CA1Class {
     
     //attributes from my class CA1Class    
-    private String firstname;
+    private String firstName;
     private String surname;
-    private double purchasevalue;
-    private int customerclass;
+    private double purchaseValue;
+    private int customerClass;
     private int year;
+    
+    //method to get first name from external program
+    public String getfirstName(){
+        return this.firstName;
+    }    
+    
+    //method to get surname from external program    
+    public String getsurname(){
+        return this.surname;
+    }    
+    
+    //method to get purchase value from external program    
+    public double getpurchaseValue(){
+        return this.purchaseValue;
+    }
+    
+    //method to get customer class from external program
+    public int getcustomerClass(){
+        return this.customerClass;
+    
+    }
+    
+    //method to get year from external program
+    public int getyear(){
+        return this.year;
+    
+    }
+    
+    //method to assign first name from external program
+    public void setfirstName(String firstNameAssist){
+        this.firstName = firstNameAssist;
+        
+    }
+    
+    //method to assign surname from external program
+    public void setsurname(String surnameAssist){
+        this.surname = surnameAssist; 
+    
+    }
+    
+    //method to assign purchase value from external program
+    public void setpurchaseValue(double purchaseValueAssist){
+        this.purchaseValue = purchaseValueAssist;
+    
+    }
+    
+    //method to assign customer class from external program
+    public void setcustomerClass(int customerClassAssist){
+        this.customerClass = customerClassAssist;
+    
+    }
+            
+    //method to assign year from external program       
+    public void setyear(int yearAssist){
+        this.year = yearAssist;
+    
+    }
+            
+            
     
 }
