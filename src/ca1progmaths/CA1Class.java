@@ -10,4 +10,11 @@ package ca1progmaths;
  */
 public class CA1Class {
     
+    //attributes from my class CA1Class    
+    private String firstname;
+    private String surname;
+    private double purchasevalue;
+    private int customerclass;
+    private int year;
+    
 }
