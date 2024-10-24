@@ -23,11 +23,11 @@ public class CA1ProgMaths {
         CA1Class ca1 = new CA1Class();
         
         // Using setter from CA1 Class
-        ca1.setfirstName("Mia");
-        ca1.setsurname("Jowita");
-        ca1.setpurchaseValue(1500);
-        ca1.setcustomerClass(1);
-        ca1.setyear(2024);
+        ca1.setfirstName("Sam");
+        ca1.setsurname("Weiss");
+        ca1.setpurchaseValue(523.00);
+        ca1.setcustomerClass(2);
+        ca1.setyear(2015);
         
         name = ca1.getfirstName();
         surname = ca1.getsurname();

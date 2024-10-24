@@ -86,14 +86,45 @@ public class CA1Class {
     
      //calculate customer discount
     public double calculateDiscount(){
-        if(year == 2024 && customerClass == 1){
+        if(customerClass == 1 && year == 2024){
            discount = purchaseValue * 0.7;
             System.out.println("Applied 30% discount!");
+            
+    } else if (customerClass == 1 && year < 2024 -5){
+            discount = purchaseValue * 0.9;
+            System.out.println("Applied 10% discount!");
+            
+    } else if (customerClass == 1 && year < 2024){
+            discount = purchaseValue * 0.8;
+            System.out.println("Applied 20% discount!");
+            
+    } else if (customerClass == 2 && year == 2024){
+            discount = purchaseValue * 0.85;
+            System.out.println("Applied 15% discount!");
+            
+    } else if (customerClass == 2 && year < 2024 -5){
+            discount = purchaseValue * 0.95;
+            System.out.println("Applied 5% discount!");
+            
+    } else if (customerClass == 2 && year < 2024){
+            discount = purchaseValue * 0.87;
+            System.out.println("Applied 13% discount!");
+            
+    } else if (customerClass == 3 && year == 2024){
+            discount = purchaseValue * 0.97;
+            System.out.println("Applied 3% discount!");
+            
+    } else if (customerClass == 3 && year < 2024){
+            discount = purchaseValue * 0;
+            System.out.println("Applied 0% discount!");
             
     }
         return discount;
 
     }
+
+    
+
             
             
     
