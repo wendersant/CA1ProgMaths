@@ -16,14 +16,24 @@ public class CA1ProgMaths {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        double disc;
+        String name, surname;
+        
         
         CA1Class ca1 = new CA1Class();
         
+        // Using setter from CA1 Class
         ca1.setfirstName("Mia");
         ca1.setsurname("Jowita");
-      
+        ca1.setpurchaseValue(1500);
+        ca1.setcustomerClass(1);
+        ca1.setyear(2024);
         
-        System.out.println(ca1.getfirstName() + " " + ca1.getsurname());
+        name = ca1.getfirstName();
+        surname = ca1.getsurname();
+        disc = ca1.calculateDiscount();
+        
+        System.out.println(name +  " " + surname + " will pay " + disc + ".");
         
         
     }

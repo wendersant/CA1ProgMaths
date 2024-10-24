@@ -17,6 +17,8 @@ public class CA1Class {
     private int customerClass;
     private int year;
     
+    private double discount;
+   
     //method to get first name from external program
     public String getfirstName(){
         return this.firstName;
@@ -72,6 +74,25 @@ public class CA1Class {
     public void setyear(int yearAssist){
         this.year = yearAssist;
     
+    }
+    
+    public double getdiscount(){
+        return this.discount;
+    }
+    
+    public void setdiscount(double discountAssist){
+        this.discount = discountAssist;
+    }
+    
+     //calculate customer discount
+    public double calculateDiscount(){
+        if(year == 2024 && customerClass == 1){
+           discount = purchaseValue * 0.7;
+            System.out.println("Applied 30% discount!");
+            
+    }
+        return discount;
+
     }
             
             
