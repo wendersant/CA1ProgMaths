@@ -15,6 +15,17 @@ public class CA1ProgMaths {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+        CA1Class ca1 = new CA1Class();
+        
+        ca1.setfirstName("Mia");
+        ca1.setsurname("Jowita");
+      
+        
+        System.out.println(ca1.getfirstName() + " " + ca1.getsurname());
+        
+        
     }
     
 }
