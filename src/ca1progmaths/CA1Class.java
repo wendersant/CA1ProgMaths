@@ -8,6 +8,9 @@ package ca1progmaths;
  *
  * @author wendersondasilvasantana
  */
+
+import java.util.Scanner;
+
 public class CA1Class {
     
     //attributes from my class CA1Class    
@@ -18,6 +21,8 @@ public class CA1Class {
     private int year;
     
     private double discount;
+    
+    Scanner scan = new Scanner(System.in);
    
     //method to get first name from external program
     public String getfirstName(){
@@ -87,7 +92,7 @@ public class CA1Class {
      //calculate customer discount
     public double calculateDiscount(){
         if(customerClass == 1 && year == 2024){
-           discount = purchaseValue * 0.7;
+            discount = purchaseValue * 0.7;
             System.out.println("Applied 30% discount!");
             
     } else if (customerClass == 1 && year < 2024 -5){
@@ -114,10 +119,17 @@ public class CA1Class {
             discount = purchaseValue * 0.97;
             System.out.println("Applied 3% discount!");
             
+    } else if (customerClass == 3 && year < 2024 - 5){
+            discount = purchaseValue;
+            System.out.println("Sorry, no discount is given for customers who last purchase is more than 5 years.");
+    
     } else if (customerClass == 3 && year < 2024){
-            discount = purchaseValue * 0;
+            discount = purchaseValue;
             System.out.println("Applied 0% discount!");
             
+    } else {
+            System.out.println("Sorry, the class inserted was not valid. Please select class 1, 2 or 3.");
+    
     }
         return discount;
 
