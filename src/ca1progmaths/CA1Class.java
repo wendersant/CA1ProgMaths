@@ -8,31 +8,20 @@ package ca1progmaths;
  *
  * @author wendersondasilvasantana
  */
-
-import java.util.Scanner;
-
 public class CA1Class {
     
     //attributes from my class CA1Class    
-    private String firstName;
-    private String surname;
+    private String fullName;
     private double purchaseValue;
     private int customerClass;
     private int year;
     
     private double discount;
-    
-    Scanner scan = new Scanner(System.in);
-   
+ 
     //method to get first name from external program
-    public String getfirstName(){
-        return this.firstName;
-    }    
-    
-    //method to get surname from external program    
-    public String getsurname(){
-        return this.surname;
-    }    
+    public String getfullName(){
+        return this.fullName;
+    }      
     
     //method to get purchase value from external program    
     public double getpurchaseValue(){
@@ -51,16 +40,15 @@ public class CA1Class {
     
     }
     
-    //method to assign first name from external program
-    public void setfirstName(String firstNameAssist){
-        this.firstName = firstNameAssist;
-        
+     //method to get year from external program
+     public double getdiscount(){
+        return this.discount;
     }
     
-    //method to assign surname from external program
-    public void setsurname(String surnameAssist){
-        this.surname = surnameAssist; 
-    
+    //method to assign first name from external program
+    public void setfullName(String fullNameAssist){
+        this.fullName = fullNameAssist;
+        
     }
     
     //method to assign purchase value from external program
@@ -81,10 +69,7 @@ public class CA1Class {
     
     }
     
-    public double getdiscount(){
-        return this.discount;
-    }
-    
+     //method to assign year from external program
     public void setdiscount(double discountAssist){
         this.discount = discountAssist;
     }
@@ -128,7 +113,7 @@ public class CA1Class {
             System.out.println("Applied 0% discount!");
             
     } else {
-            System.out.println("Sorry, the class inserted was not valid. Please select class 1, 2 or 3.");
+            System.out.println("Sorry, the class inserted is not valid. Please select class 1, 2 or 3.");
     
     }
         return discount;
