@@ -4,6 +4,8 @@
  */
 package ca1progmaths;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -21,16 +23,55 @@ public class CA1ProgMaths {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        String fileP = "customers.txt"; //a file stored in the project folder
+        String fileO = "customerdiscount.txt"; // a file to be created 
         String[] fds = new String[4];
        
-        try { FileReader fr = new FileReader("customers.txt");
-             BufferedReader br = new BufferedReader(fr);
-            
-             String line = "";
+        try {FileReader fr = new FileReader(fileP); // it will read the file
+             BufferedReader br = new BufferedReader(fr); // wrapper around another reader
+             FileWriter fw = new FileWriter(fileO); // this will write a file
+             BufferedWriter bw = new BufferedWriter(fw); // it uses internal buffer to write data in the file
              
+             
+        String line ="";
+        int lineCount = 0;
+        
+        
+        CA1Class cust = new CA1Class();
+        
+        // While loop is used 
              while ((line = br.readLine()) != null){
+                 fds[lineCount % 4] = line;
                  System.out.println(line);
+                 
+             if (lineCount % 4 ==3) {
+             
+                 cust.setfullName(fds[0]);
+                 
+                 cust.setpurchaseValue(fds[1]);
+                 
+                 cust.setcustomerClass(fds[2]);
+                 
+                 cust.setyear(fds[3]);
+                 
+                 
+                 double discount = cust.calculateDiscount();
+                 bw.write(cust.getfullName());
+                 bw.newLine();
+                 bw.write(Double.toString(discount));
+                 
+                 
+                 
              }
+             
+             lineCount++;
+             
+             }
+             
+             bw.flush();
+             bw.close();
+             br.close();
+             
            
            
         } catch(IOException e){
@@ -39,24 +80,7 @@ public class CA1ProgMaths {
         }
             
      
-        
-//        double disc;
-//        String name;
-//        
-//        
-//        CA1Class ca1 = new CA1Class();
-//        
-//        // Using setter from CA1 Class
-//        ca1.setfullName("You");
-//        ca1.setpurchaseValue(300);
-//        ca1.setcustomerClass(4);
-//        ca1.setyear(2015);
-//        
-//        name = ca1.getfullName();
-//        disc = ca1.calculateDiscount();
-//        
-//        System.out.println(name + disc);
-        
+      
         
     }
     

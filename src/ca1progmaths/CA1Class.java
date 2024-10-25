@@ -52,26 +52,48 @@ public class CA1Class {
     }
     
     //method to assign purchase value from external program
-    public void setpurchaseValue(double purchaseValueAssist){
-        this.purchaseValue = purchaseValueAssist;
+    public void setpurchaseValue(String purchaseValueAssist){
+        try {
+            this.purchaseValue = Double.parseDouble(purchaseValueAssist);
+            
+        
+        } catch(IllegalCallerException e) {
+            System.out.println("The purchase value is invalid.");
+        }
+        
     
     }
     
     //method to assign customer class from external program
-    public void setcustomerClass(int customerClassAssist){
-        this.customerClass = customerClassAssist;
+    public void setcustomerClass(String customerClassAssist){
+        try {
+            this.customerClass = Integer.parseInt(customerClassAssist);
+            
+        } catch(IllegalCallerException e) {
+            System.out.println("Class is invalid.");
+        }
+        
     
     }
             
     //method to assign year from external program       
-    public void setyear(int yearAssist){
-        this.year = yearAssist;
-    
+    public void setyear(String yearAssist){
+        try {
+            this.year = Integer.parseInt(yearAssist);
+            
+        } catch (IllegalCallerException e) {
+            System.out.println("Year format is invalid.");
+        }
     }
     
      //method to assign year from external program
-    public void setdiscount(double discountAssist){
-        this.discount = discountAssist;
+    public void setdiscount(String discountAssist){
+        try {
+        this.discount = Double.parseDouble(discountAssist);
+        } catch (IllegalCallerException e) {
+            System.out.println("Wrong discount.");
+                   
+        }
     }
     
      //calculate customer discount
