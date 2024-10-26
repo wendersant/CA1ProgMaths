@@ -16,9 +16,9 @@ public class CA1Class {
     private int customerClass;
     private int year;
     
-    private double discount;
+    double discount;
  
-    //method to get first name from external program
+    //method to get full name from external program
     public String getfullName(){
         return this.fullName;
     }      
@@ -40,12 +40,7 @@ public class CA1Class {
     
     }
     
-     //method to get year from external program
-     public double getdiscount(){
-        return this.discount;
-    }
-    
-    //method to assign first name from external program
+    //method to assign full name from external program
     public void setfullName(String fullNameAssist){
         this.fullName = fullNameAssist;
         
@@ -54,7 +49,7 @@ public class CA1Class {
     //method to assign purchase value from external program
     public void setpurchaseValue(String purchaseValueAssist){
         try {
-            this.purchaseValue = Double.parseDouble(purchaseValueAssist);
+            this.purchaseValue = Double.parseDouble(purchaseValueAssist); // it converts to double
             
         
         } catch(IllegalCallerException e) {
@@ -67,7 +62,7 @@ public class CA1Class {
     //method to assign customer class from external program
     public void setcustomerClass(String customerClassAssist){
         try {
-            this.customerClass = Integer.parseInt(customerClassAssist);
+            this.customerClass = Integer.parseInt(customerClassAssist); // it converts to integer
             
         } catch(IllegalCallerException e) {
             System.out.println("Class is invalid.");
@@ -79,64 +74,49 @@ public class CA1Class {
     //method to assign year from external program       
     public void setyear(String yearAssist){
         try {
-            this.year = Integer.parseInt(yearAssist);
+            this.year = Integer.parseInt(yearAssist); // it converts to integer
             
         } catch (IllegalCallerException e) {
             System.out.println("Year format is invalid.");
         }
     }
-    
-     //method to assign year from external program
-    public void setdiscount(String discountAssist){
-        try {
-        this.discount = Double.parseDouble(discountAssist);
-        } catch (IllegalCallerException e) {
-            System.out.println("Wrong discount.");
-                   
-        }
-    }
-    
-     //calculate customer discount
+     
+    //calculate customer discount
     public double calculateDiscount(){
         if(customerClass == 1 && year == 2024){
-            discount = purchaseValue * 0.7;
-            System.out.println("Applied 30% discount!");
+            discount = purchaseValue * 0.7; // it calculates 30% discount of the total purchase
             
     } else if (customerClass == 1 && year < 2024 -5){
-            discount = purchaseValue * 0.9;
-            System.out.println("Applied 10% discount!");
+            discount = purchaseValue * 0.9; // it calculates 10% discount of the total purchase
+           
             
     } else if (customerClass == 1 && year < 2024){
-            discount = purchaseValue * 0.8;
-            System.out.println("Applied 20% discount!");
+            discount = purchaseValue * 0.8; // it calculates 20% discount of the total purchase
+           
             
     } else if (customerClass == 2 && year == 2024){
-            discount = purchaseValue * 0.85;
-            System.out.println("Applied 15% discount!");
+            discount = purchaseValue * 0.85; // it calculates 15% discount of the total purchase
+           
             
     } else if (customerClass == 2 && year < 2024 -5){
-            discount = purchaseValue * 0.95;
-            System.out.println("Applied 5% discount!");
+            discount = purchaseValue * 0.95; // it calculates 5% discount of the total purchase
+            
             
     } else if (customerClass == 2 && year < 2024){
-            discount = purchaseValue * 0.87;
-            System.out.println("Applied 13% discount!");
+            discount = purchaseValue * 0.87; // it calculates 13% discount of the total purchase
+            
             
     } else if (customerClass == 3 && year == 2024){
-            discount = purchaseValue * 0.97;
-            System.out.println("Applied 3% discount!");
+            discount = purchaseValue * 0.97; // it calculates 3% discount of the total purchase
             
-    } else if (customerClass == 3 && year < 2024 - 5){
-            discount = purchaseValue;
-            System.out.println("Sorry, no discount is given for customers who last purchase is more than 5 years.");
-    
+            
     } else if (customerClass == 3 && year < 2024){
             discount = purchaseValue;
-            System.out.println("Applied 0% discount!");
+           
+   
+    } else if (customerClass != 1 || customerClass != 2 || customerClass != 3){
+            discount = 0;
             
-    } else {
-            System.out.println("Sorry, the class inserted is not valid. Please select class 1, 2 or 3.");
-    
     }
         return discount;
 

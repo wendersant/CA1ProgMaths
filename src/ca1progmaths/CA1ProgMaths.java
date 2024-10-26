@@ -4,11 +4,7 @@
  */
 package ca1progmaths;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -27,13 +23,12 @@ public class CA1ProgMaths {
         String fileO = "customerdiscount.txt"; // a file to be created 
         String[] fds = new String[4];
        
-        try {FileReader fr = new FileReader(fileP); // it will read the file
-             BufferedReader br = new BufferedReader(fr); // wrapper around another reader
-             FileWriter fw = new FileWriter(fileO); // this will write a file
-             BufferedWriter bw = new BufferedWriter(fw); // it uses internal buffer to write data in the file
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileP)); // It will read the file stored in the projecy's folder
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileO)); // This will create a file and it will store the the file in the project's folder
              
              
-        String line ="";
+        String line;
         int lineCount = 0;
         
         
@@ -44,7 +39,7 @@ public class CA1ProgMaths {
                  fds[lineCount % 4] = line;
                  System.out.println(line);
                  
-             if (lineCount % 4 ==3) {
+             if (lineCount % 4 == 3) {
              
                  cust.setfullName(fds[0]);
                  
@@ -55,10 +50,11 @@ public class CA1ProgMaths {
                  cust.setyear(fds[3]);
                  
                  
-                 double discount = cust.calculateDiscount();
+                double discount = cust.calculateDiscount();
                  bw.write(cust.getfullName());
                  bw.newLine();
                  bw.write(Double.toString(discount));
+                 bw.newLine();
                  
                  
                  
