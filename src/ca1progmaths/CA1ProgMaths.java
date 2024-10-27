@@ -2,6 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+
+/*
+Link to the GitHub Repository
+https://github.com/wendersant/CA1ProgMaths
+*/
+
 package ca1progmaths;
 
 import java.io.*;
@@ -20,25 +26,26 @@ public class CA1ProgMaths {
         // TODO code application logic here
         
         String fileP = "customers.txt"; //a file stored in the project folder
-        String fileO = "customerdiscount.txt"; // a file to be created 
-        String[] fds = new String[4];
+        String fileO = "customerdiscount.txt"; // a file to be created and stored in the same folder
+        String[] fds = new String[4]; //an array to store 4 strings 
        
         try {
-            BufferedReader br = new BufferedReader(new FileReader(fileP)); // It will read the file stored in the projecy's folder
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileO)); // This will create a file and it will store the the file in the project's folder
+            BufferedReader br = new BufferedReader(new FileReader(fileP)); // It will read the file stored in the project's folder
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileO)); // This will create a file and it will store the file in the same project's folder
              
              
         String line;
         int lineCount = 0;
         
-        
+        // importing CA1Calss from external file 
         CA1Class cust = new CA1Class();
         
-        // While loop is used 
+        // While loop is used to read the file until last row(null)
              while ((line = br.readLine()) != null){
                  fds[lineCount % 4] = line;
                  System.out.println(line);
                  
+                 // it will check the 4 lines assigned and check if there is any error
              if (lineCount % 4 == 3) {
              
                  cust.setfullName(fds[0]);
@@ -50,11 +57,11 @@ public class CA1ProgMaths {
                  cust.setyear(fds[3]);
                  
                  
-                double discount = cust.calculateDiscount();
-                 bw.write(cust.getfullName());
-                 bw.newLine();
-                 bw.write(Double.toString(discount));
-                 bw.newLine();
+                double discount = cust.calculateDiscount(); // calculate discount from external program
+                 bw.write(cust.getfullName()); // it writes full name on the new file
+                 bw.newLine(); // new line is added
+                 bw.write(Double.toString(discount)); // it writes the calculated discount on the new file
+                 bw.newLine(); // new line added
                  
                  
                  
@@ -64,9 +71,9 @@ public class CA1ProgMaths {
              
              }
              
-             bw.flush();
-             bw.close();
-             br.close();
+             bw.flush();// it flushes the writer
+             bw.close();// it closes BufferedWriter
+             br.close();// it closes BufferedReader
              
            
            

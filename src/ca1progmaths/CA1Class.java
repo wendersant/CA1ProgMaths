@@ -49,7 +49,7 @@ public class CA1Class {
     //method to assign purchase value from external program
     public void setpurchaseValue(String purchaseValueAssist){
         try {
-            this.purchaseValue = Double.parseDouble(purchaseValueAssist); // it converts to double
+            this.purchaseValue = Double.parseDouble(purchaseValueAssist); // it converts String to double when the value is set
             
         
         } catch(IllegalCallerException e) {
@@ -62,7 +62,7 @@ public class CA1Class {
     //method to assign customer class from external program
     public void setcustomerClass(String customerClassAssist){
         try {
-            this.customerClass = Integer.parseInt(customerClassAssist); // it converts to integer
+            this.customerClass = Integer.parseInt(customerClassAssist); // it converts String to integer when the value is set
             
         } catch(IllegalCallerException e) {
             System.out.println("Class is invalid.");
@@ -74,14 +74,14 @@ public class CA1Class {
     //method to assign year from external program       
     public void setyear(String yearAssist){
         try {
-            this.year = Integer.parseInt(yearAssist); // it converts to integer
+            this.year = Integer.parseInt(yearAssist); // it converts String to integer when the value is set
             
         } catch (IllegalCallerException e) {
             System.out.println("Year format is invalid.");
         }
     }
      
-    //calculate customer discount
+    //It will calculate customer discount according to the values inserted in main method
     public double calculateDiscount(){
         if(customerClass == 1 && year == 2024){
             discount = purchaseValue * 0.7; // it calculates 30% discount of the total purchase
@@ -111,11 +111,11 @@ public class CA1Class {
             
             
     } else if (customerClass == 3 && year < 2024){
-            discount = purchaseValue;
+            discount = purchaseValue; //  discount is equal purchase value because no discount is given for this condition
            
    
     } else if (customerClass != 1 || customerClass != 2 || customerClass != 3){
-            discount = 0;
+            discount = 0; //discount is equal O in case of wrong class is typed
             
     }
         return discount;
