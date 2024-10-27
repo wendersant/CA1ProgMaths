@@ -4,6 +4,8 @@
  */
 
 /*
+Wenderson Da Silva Santana
+Student Number: 2017069
 Link to the GitHub Repository
 https://github.com/wendersant/CA1ProgMaths
 */
